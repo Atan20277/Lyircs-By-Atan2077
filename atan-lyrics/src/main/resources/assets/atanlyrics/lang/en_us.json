@@ -1,0 +1,32 @@
+{
+  "key.categories.atanlyrics": "ATAN Lyrics",
+  "key.atanlyrics.open_menu": "Open ATAN Lyrics Menu",
+
+  "atanlyrics.title": "ATAN Lyrics",
+  "atanlyrics.subtitle": "anime • soft • synced",
+
+  "atanlyrics.category.general": "General",
+  "atanlyrics.category.style": "Style",
+  "atanlyrics.category.modes": "Display Modes",
+  "atanlyrics.category.widget": "Now Playing Widget",
+  "atanlyrics.category.world": "3D World",
+
+  "atanlyrics.option.enabled": "Enabled",
+  "atanlyrics.option.displayMode": "Display Mode",
+  "atanlyrics.option.karaoke": "Karaoke Highlight",
+  "atanlyrics.option.glow": "Soft Glow",
+  "atanlyrics.option.party": "Party Mode",
+  "atanlyrics.option.worldLyrics": "World Lyrics",
+  "atanlyrics.option.showWidget": "Show Widget",
+  "atanlyrics.option.previousLine": "Previous Line",
+  "atanlyrics.option.nextPreview": "Next Line Preview",
+  "atanlyrics.option.countdown": "Instrumental Countdown",
+
+  "atanlyrics.mode.HUD_CLASSIC": "HUD Classic",
+  "atanlyrics.mode.HUD_KARAOKE": "HUD Karaoke",
+  "atanlyrics.mode.HUD_SOFT": "HUD Soft",
+  "atanlyrics.mode.FLOATING_ANIME": "Floating Anime",
+  "atanlyrics.mode.WORLD_3D": "3D World",
+  "atanlyrics.mode.MINIMAL": "Minimal",
+  "atanlyrics.mode.PARTY": "Party ♡"
+}

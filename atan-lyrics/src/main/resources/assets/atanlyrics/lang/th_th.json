@@ -1,0 +1,25 @@
+{
+  "key.categories.atanlyrics": "ATAN Lyrics",
+  "key.atanlyrics.open_menu": "เปิดเมนู ATAN Lyrics",
+
+  "atanlyrics.title": "ATAN Lyrics",
+  "atanlyrics.subtitle": "อะนิเมะ • นุ่มนวล • ซิงค์",
+
+  "atanlyrics.category.general": "ทั่วไป",
+  "atanlyrics.category.style": "สไตล์",
+  "atanlyrics.category.modes": "โหมดแสดงผล",
+  "atanlyrics.category.widget": "วิดเจ็ตเพลงที่กำลังเล่น",
+  "atanlyrics.category.world": "3D ในโลก",
+
+  "atanlyrics.option.enabled": "เปิดใช้งาน",
+  "atanlyrics.option.displayMode": "โหมดแสดงผล",
+  "atanlyrics.option.karaoke": "ไฮไลท์คาราโอเกะ",
+  "atanlyrics.option.glow": "เรืองแสงนุ่มนวล",
+  "atanlyrics.option.party": "โหมดปาร์ตี้",
+  "atanlyrics.option.worldLyrics": "เนื้อเพลงในโลก 3D",
+  "atanlyrics.option.showWidget": "แสดงวิดเจ็ต",
+  "atanlyrics.option.previousLine": "บรรทัดก่อนหน้า",
+  "atanlyrics.option.nextPreview": "แสดงบรรทัดถัดไป",
+  "atanlyrics.option.countdown": "นับถอยหลังช่วงดนตรี"
+
+}
