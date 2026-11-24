@@ -1,11 +1,9 @@
 package me.atan.lyrics.gui;
 
-import com.terraformersmc.modmenu.api.ConfigScreenFactory;
-import com.terraformersmc.modmenu.api.ModMenuApi;
+import net.minecraft.client.gui.screens.Screen;
 
-public class ModMenuIntegration implements ModMenuApi {
-    @Override
-    public ConfigScreenFactory<?> getModConfigScreenFactory() {
-        return AtanMenuScreen::new;
+public class ModMenuIntegration {
+    public Screen createConfigScreen(Screen parent) {
+        return new AtanMenuScreen(parent);
     }
 }
