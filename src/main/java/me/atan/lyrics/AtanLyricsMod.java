@@ -9,11 +9,11 @@ import me.atan.lyrics.render.WorldLyricsRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
+import net.fabricmc.fabric.api.client.rendering.v1.world.WorldRenderEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,11 +38,11 @@ public final class AtanLyricsMod implements ClientModInitializer {
         // 1.21.11+ preferred HUD API
         HudElementRegistry.attachElementAfter(
                 VanillaHudElements.CHAT,
-                ResourceLocation.fromNamespaceAndPath(MOD_ID, "lyrics"),
+                Identifier.fromNamespaceAndPath(MOD_ID, "lyrics"),
                 (graphics, deltaTracker) -> HudLyricsRenderer.render(graphics, deltaTracker)
         );
 
-        WorldRenderEvents.AFTER_TRANSLUCENT.register(WorldLyricsRenderer::render);
+        WorldRenderEvents.BeforeTranslucent.register(WorldLyricsRenderer::render);
 
         ClientTickEvents.END_CLIENT_TICK.register(this::onClientTick);
 

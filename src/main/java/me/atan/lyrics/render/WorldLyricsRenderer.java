@@ -4,7 +4,7 @@ import me.atan.lyrics.config.AtanConfig;
 import me.atan.lyrics.media.MediaManager;
 import me.atan.lyrics.media.SyncedLyrics;
 import me.atan.lyrics.media.TrackInfo;
-import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderContext;
+import net.fabricmc.fabric.api.client.rendering.v1.world.WorldRenderContext;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.world.phys.Vec3;

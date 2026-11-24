@@ -9,7 +9,7 @@ import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
 import java.util.ArrayList;
@@ -55,7 +55,7 @@ public final class HudLyricsRenderer {
 
         // Optional full-screen custom background
         if (cfg.customBackground != null && !cfg.customBackground.isBlank()) {
-            ResourceLocation bg = CustomTextures.get(cfg.customBackground);
+            Identifier bg = CustomTextures.get(cfg.customBackground);
             if (bg != null) {
                 g.blit(bg, 0, 0, 0, 0, sw, sh, sw, sh);
             }
@@ -170,7 +170,7 @@ public final class HudLyricsRenderer {
         g.pose().scale(s, s);
 
         // Custom art override
-        ResourceLocation art = null;
+        Identifier art = null;
         if (cfg.customWidgetArt != null && !cfg.customWidgetArt.isBlank()) {
             art = CustomTextures.get(cfg.customWidgetArt);
         }

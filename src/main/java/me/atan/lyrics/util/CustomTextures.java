@@ -5,7 +5,7 @@ import me.atan.lyrics.AtanLyricsMod;
 import me.atan.lyrics.config.AtanConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.DynamicTexture;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -19,17 +19,17 @@ import java.util.Map;
  */
 public final class CustomTextures {
 
-    private static final Map<String, ResourceLocation> CACHE = new HashMap<>();
+    private static final Map<String, Identifier> CACHE = new HashMap<>();
     private static final String NAMESPACE = "atanlyrics_custom";
 
     private CustomTextures() {}
 
-    public static ResourceLocation get(String filename) {
+    public static Identifier get(String filename) {
         if (filename == null || filename.isBlank()) return null;
         return CACHE.computeIfAbsent(filename, CustomTextures::load);
     }
 
-    private static ResourceLocation load(String filename) {
+    private static Identifier load(String filename) {
         Path path = AtanConfig.INSTANCE.resolveCustom(filename);
         if (path == null) {
             AtanLyricsMod.LOGGER.warn("[ATAN] Custom image not found: {}", filename);
@@ -39,7 +39,7 @@ public final class CustomTextures {
         try (InputStream in = Files.newInputStream(path)) {
             NativeImage image = NativeImage.read(in);
             DynamicTexture tex = new DynamicTexture(() -> "atanlyrics/" + filename, image);
-            ResourceLocation id = ResourceLocation.fromNamespaceAndPath(NAMESPACE, sanitize(filename));
+            Identifier id = Identifier.fromNamespaceAndPath(NAMESPACE, sanitize(filename));
             Minecraft.getInstance().getTextureManager().register(id, tex);
             AtanLyricsMod.LOGGER.info("[ATAN] Loaded custom image: {}", filename);
             return id;
