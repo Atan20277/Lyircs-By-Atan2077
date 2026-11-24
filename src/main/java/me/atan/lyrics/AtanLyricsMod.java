@@ -9,8 +9,6 @@ import me.atan.lyrics.render.WorldLyricsRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
-import net.fabricmc.fabric.api.client.rendering.v1.world.WorldRenderEvents;
-import net.minecraft.client.Minecraft;
 import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,14 +21,13 @@ public class AtanLyricsMod implements ClientModInitializer {
     public void onInitializeClient() {
         AtanConfig.load();
         MenuKey.init();
-        MediaManager.init();
+        MediaManager.getInstance().start();
 
-        HudRenderCallback.EVENT.register((graphics, tickDelta) -> HudLyricsRenderer.render(graphics));
-
-        WorldRenderEvents.BeforeTranslucent.register(context -> WorldLyricsRenderer.render(context));
+        HudRenderCallback.EVENT.register((graphics, tickDelta) -> HudLyricsRenderer.render(graphics, tickDelta));
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            MediaManager.tick();
+            MediaManager.getInstance().tick();
+            WorldLyricsRenderer.render();
             while (MenuKey.OPEN_MENU.consumeClick()) {
                 if (client.screen == null) {
                     client.setScreen(new AtanMenuScreen(null));
