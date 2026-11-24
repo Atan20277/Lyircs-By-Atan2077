@@ -1,15 +1,23 @@
 package me.atan.lyrics.gui;
 
 import com.mojang.blaze3d.platform.InputConstants;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.KeyMapping;
+import net.minecraft.resources.Identifier;
 import org.lwjgl.glfw.GLFW;
 
-public final class MenuKey {
-    public static final KeyMapping OPEN_MENU = new KeyMapping(
+public class MenuKey {
+    public static final KeyMapping.Category CATEGORY = KeyMapping.Category.register(
+            Identifier.fromNamespaceAndPath("atanlyrics", "key.categories.atanlyrics")
+    );
+
+    public static final KeyMapping OPEN_MENU = KeyBindingHelper.registerKeyBinding(new KeyMapping(
             "key.atanlyrics.open_menu",
             InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_RIGHT_SHIFT,
-            "key.categories.atanlyrics"
-    );
-    private MenuKey() {}
+            CATEGORY
+    ));
+
+    public static void init() {
+    }
 }
